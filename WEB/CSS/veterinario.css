@@ -1,0 +1,20 @@
+fieldset.dono{
+    background-color: antiquewhite;
+}
+fieldset.pet{
+    background-color: aquamarine;
+}
+body{
+    background-color: beige;
+}
+legend{
+    margin: 2px;
+    background-color: aqua;
+}
+h1{
+    color: red;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    margin: 2px;
+    padding: 10px;
+}

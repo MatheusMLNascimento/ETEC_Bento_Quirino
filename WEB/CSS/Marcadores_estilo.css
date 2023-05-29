@@ -1,0 +1,46 @@
+/* 01 - Customize o tipo de marcador com list-style-type
+   disk square decimal circle 
+   "-" 
+*/
+ul.lista1 li{
+    background-color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-right: 60%;
+    margin-top: 14px;
+    /* list-style-type: circle; */
+    list-style-image: url("Seta_HTML.png");
+    border: 2px solid cornflowerblue;
+}
+
+ul.lista2 li{
+    background-color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-right: 60%;
+    margin-top: 10px;
+    /* list-style-type: square; */
+    list-style-image: url(Seta_HTML.png);
+    list-style-position: inside;
+    border: 2px solid lightcoral;
+}
+
+p.compras{
+    background-color: aquamarine;
+    margin-right: 30%;
+    font-size: 22px;
+    padding: 6px;
+}
+
+p.clientes{
+    background-color: antiquewhite;
+    margin-right: 30%;
+    font-size: 22px;
+    padding: 6px;
+}
+
+h1{
+    text-shadow: blue 2px 2px 2px;
+    font-size: 60px;
+    text-align: center;
+}

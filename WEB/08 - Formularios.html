@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+
+        <!-- 01 Acrescente um formulario com FORM -->
+        <!--    dê um NAME de cadstro_consulta ao form -->
+        <!--    informe quem vai processar o fomulario com ACTION -->
+        <!--    importancia do # -->
+        <!-- O que são os metodos GET POST HTTPS ???-->
+        <!--    informe o verbo GET com METHOD -->
+        
+        <fieldset>
+            <legend> Dados do paciente </legend>
+        <form action="#" name="cadastro_consulta" method="get">
+
+
+            <!-- 02 - Acrescente um LABEL nome: e um input TEXT-->
+            <!--     Importancia do atributo FOR -->
+            <!--     Adicione um PLACEHOLDER -->
+
+            <label for="nome">Nome:</label>
+            <input id="nome" 
+            size="30"
+            required
+            maxlength="20" 
+            type="text" 
+            placeholder="Digite seu nome">
+
+            
+            <br><br>
+
+            <!-- 03 - Acrescente um LABEL endereço: e um input TEXT-->
+            <!--      Adicione um PLACEHOLDER -->
+            <!--      adicione Atributo REQUIRED -->
+            <!--      adicione um SIZE para tamanho de 40 caracteres -->
+            <label id="endereco" for="endereco">Endereco :</label>
+            <input id="endereco" 
+            name="endereco" 
+            type="text" 
+            required
+            placeholder="digite seu endereco" 
+            size="30" 
+            maxlength="24" >
+            
+
+
+            <br><br>
+
+            <!-- 04 - Acrescente um LABEL telefone: e um input TEL-->
+            <!--      Acrescente um atributo PATTERN -->
+            <!--      [0-9]{2} dois digitos de 0 até 9 -->
+            <!--      \(   \)  colocar um ( ou um ) -->
+            <!--      adicione REQUIRED e PLACEHOLDER-->
+            <label id="telefone" for="telefone">Telefone: </label>
+            <input type="tel" 
+            required 
+            placeholder="(xx) xxxxx-xxxx" 
+            pattern="\([0-9]{2}\)[0-9]{5}\-[0-9]{4}" >
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend> Dados consulta</legend>
+            <!-- 05 - Acrescente um TEXTAREA sintomas: e um input TEXT -->
+            <!--    - Acrescente COLS ROWS PLACEHOLDER-->
+            <label for="sintomas"> Sintomas: </label><br>
+            <textarea name="sintomas" 
+            id="sintomas" 
+            cols="32" 
+            rows="10"></textarea> 
+
+
+            <br><br>
+
+            <!-- 06 - Acrescente um LABEL data da consulta: e um input DATE -->
+            <label for="hora_consulta"> Hora consulta </label>
+            <input name="datahora_consulta" type="datetime-local">
+
+
+            <br><br>
+
+            <!-- 07 - Acrescente um LABEL hora da consulta: e um input TIME -->
+            <label for="data_consulta"> Data consulta</label>
+            <input type="date">
+
+
+            <br><br>
+
+            <!-- 08 - dois input RADIO para sexo masculinmo ou feminino-->
+            <!--    - Selecione um dos dois com NAME -->
+
+            <label for="sexo"> Sexo: </label>
+
+            <input type="radio" name="sexo" id="masculino"><label for="masculino">Masculino</label>
+            <input type="radio" name="sexo" id="feminino"><label for="feminino">Feminino</label>
+
+            <br><br>
+        
+            <!-- 09 - dois input CHECKBOX para FACEBOOK e INSTAGRAM-->
+            <label for="onde_conheceu">Já ví anuncios desta clinicas no: </label>
+            <br>
+            <input type="checkbox" name="pelo_facebook" value="true"><label>Facebook</label> 
+            <input type="checkbox" name="pelo_instagram" value="true"><label>Instagram</label>
+            <br>
+
+            <!-- XX - Acrescente um botao com SUBMIT-->
+            <!--  OBS: O botão de submit deve ser colocado para os patterns funcionarem -->
+        </fieldset>
+
+            <input type="submit" value="Enviar">
+    </form>   
+    
+</body>
+</html>
