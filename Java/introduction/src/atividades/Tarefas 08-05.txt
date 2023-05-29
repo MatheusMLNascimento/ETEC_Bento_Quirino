@@ -1,0 +1,123 @@
+1) Para ir à feira, uma dona de casa relacionou 10 produtos a serem comprados.
+   Elabore um programa que solicite o valor de cada produto e no final exiba o valor total da compra para a dona de casa.
+
+public class Calc_feira {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Insira o valor dos 10 produtos para ter o valor total: ");
+        float soma = 0;
+        for (int count = 0; count < 10; count++){
+            float valores = sc.nextFloat();
+            soma += valores;
+        }
+        System.out.printf("O total das compras ficou: R$ %.2f", soma);
+    }
+}
+
+
+2) Tentando ensinar uma criança a contar de 1 (um) a 9 (nove),
+         uma professora imaginou um programa de computador que quando o aluno fornece um número o computador
+         imprime uma sequência de asteriscos ("*") relativos ao número fornecido.
+
+
+
+         Exemplos: Aluno fornece o número 2, o programa imprime "
+         "Aluno forneceo número 7, o programa imprime "
+
+         Escreva o programa que a professora imaginou e a ajude a ensinar seus alunos!
+
+public class Contador_kids {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Insira um número qualquer e verifique seu tamanho em astericos '*'");
+        int numeros = sc.nextInt();
+        for (int count = 0; count < numeros; count++){
+            System.out.println("*");
+        }
+    }
+}
+
+
+3) A tabuada de um determinado número é uma tabela de produtos deste número com os números de 1 a 9.
+         Escreva um programa que peça um número ao usuário e imprima a tabuada deste número na tela.
+
+public class Tabuada {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Input a number to see it multiplication table: ");
+        int number = sc.nextInt();
+
+        int counter = 0;
+        while (counter < 11){
+            System.out.printf("%d x %d = %d\n", number, counter, number * counter);
+            counter += 1;
+        }
+    }        
+}
+
+
+4) O fatorial de um número inteiro positivo é o produto dele por todos os seus
+         antecessores até 1, representa-se N!. Por definição o fatorial de 0! = 1 e o fatorial de 1! = 1!.
+         Exemplo: 5! = 5 * 4 * 3 * 2 * 1 = 120.
+         Faça um programa que peça um número ao usuário e imprima o fatorial deste número na tela.
+
+public class Fatoriais {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        /**
+         4) O fatorial de um número inteiro positivo é o produto dele por todos os seus
+        antecessores até 1, representa-se N!. Por definição o fatorial de 0! = 1 e o fatorial de 1! = 1!.
+        Exemplo: 5! = 5 * 4 * 3 * 2 * 1 = 120.
+        Faça um programa que peça um número ao usuário e imprima o fatorial deste número na tela. */
+        System.out.println("Insira um número para ver seu fatorial: ");
+        int numeros = sc.nextInt();
+        System.out.printf("%d!\n", numeros);
+        int mult = numeros;
+        int contador = 0;
+        for (int count = 0; count < numeros-1; count++){
+            contador = numeros-count;
+            System.out.println(contador + "*");
+            mult *= contador-1;
+        }
+        System.out.println("1*\n");
+        System.out.println(numeros + "! = " + mult);
+    }
+}
+
+
+5) Escreva um programa que leia a idade e o peso dos jogadores de um time de basquete.
+         No final imprima a média de idade e a média de peso deste time.*/
+
+public class Media_idade_peso {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+     /**
+      5) Escreva um programa que leia a idade e o peso dos jogadores de um time de basquete.
+      No final imprima a média de idade e a média de peso deste time.*/
+
+        System.out.println("Insert the number of players in the team: ");
+        int total_players = sc.nextInt();
+        /*int[] numbers = new int[total_players];*/
+        float[] weight = new float[total_players];
+        int[] age = new int[total_players];
+        float sum1 = 0;
+        int sum2 = 0;
+        for (int count = 0; count < total_players; count++){
+            System.out.println("\nPeso do jogador " + (count+1) + ":");
+            weight[count] = sc.nextFloat();
+            System.out.println("Idade do jogador " + (count+1) + ":");
+            age[count] = sc.nextInt();
+            sum1 += weight[count];
+            sum2 += age[count];
+            System.out.println("Peso: Kg \n" + weight[count]);
+            System.out.println("Idade: \n" + age[count]);
+        }
+        System.out.println("The average of weight is: Kg " + (sum1/total_players));
+        System.out.println("The average of age is: " + (sum2/total_players));
+    }
+}

@@ -1,0 +1,113 @@
+CRIADO POR: MATHEUS MARTINS LUNA NASCIMENTO 1ºDS
+
+Responder as seguintes consultas com uma instrução SQL:
+
+1 - Livros por autor (Nome do livro e nome do autor).
+SELECT livros.nome, autores.nome
+FROM livros, autores
+WHERE livros.id_autor = autores.id_autor
+
+
+2 - Livros cujo gênero é "Tecnologia" (Nome do livro, nome do autor, Editora).
+SELECT livros.nome, generoslivro.genero_livro, autores.nome, editoras.editora
+FROM livros, autores, editoras, generoslivro
+WHERE generoslivro.genero_livro = "Tecnologia"
+AND livros.id_editora = editoras.id_editora
+AND livros.id_genero = generoslivro.id_genero
+AND livros.id_autor = autores.id_autor
+
+
+
+3 - Livros cujo publico é "infantil" (Nome do livro, nome do autor, Editora).
+SELECT livros.nome, autores.nome, editoras.editora, publico.publico_do_livro
+FROM livros, editoras, autores, publico, generoslivro
+WHERE publico.publico_do_livro = "infantil"
+AND livros.id_editora = editoras.id_editora
+AND livros.id_genero = generoslivro.id_genero
+AND livros.id_autor = autores.id_autor
+AND publico.id_publico = livros.id_publico
+
+
+4 - Autores cujo publico dos livros são para o publico "Jovens".
+SELECT autores.nome, publico.publico_do_livro , livros.nome, editoras.editora
+FROM livros, editoras, autores, publico
+WHERE livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND publico.id_publico = livros.id_publico
+AND publico.publico_do_livro = "Jovens"
+
+
+5 - Emprestimos por genero (Nome do cliente, Nome do livro, Nome do Autor e Nome da Editora).
+SELECT clientes.nome, livros.nome, autores.nome, editoras.editora, generoslivro.genero_livro, emprestimos.id_emprestimo
+FROM clientes, livros, autores, editoras, generoslivro, emprestimos
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND generoslivro.id_genero = livros.id_genero
+AND clientes.id_clientes = emprestimos.id_clientes
+AND generoslivro.genero_livro = "aventura"
+
+
+6 - Emprestimos por publico (Nome do cliente, Nome do livro, Nome do Autor e Nome da Editora).
+SELECT clientes.nome, livros.nome, autores.nome, editoras.editora, publico.publico_do_livro, emprestimos.id_emprestimo
+FROM clientes, livros, autores, editoras, publico, emprestimos
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND publico.id_publico = livros.id_publico
+AND clientes.id_clientes = emprestimos.id_clientes
+AND publico.publico_do_livro = "Adultos"
+
+
+7 - Emprestimos feitos pelo Cliente "Jorge" (Nome do livro, Nome do Autor, Nome da Editora, Cidade, CEP e UF do cliente).
+SELECT clientes.nome, livros.nome, autores.nome, editoras.editora, cep.cep_casa, cidade.nome_cidade, UF.UF, emprestimos.id_emprestimo
+FROM clientes, livros, autores, editoras, emprestimos, cep, cidade, uf
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND clientes.id_clientes = emprestimos.id_clientes
+AND clientes.id_cep = CEP.id_cep
+AND clientes.id_cidade = Cidade.id_cidade
+AND clientes.id_uf = UF.id_uf
+AND clientes.nome = "Jorge"
+
+8 - Emprestimos realizados para clientes que moram em "Campinas" (Nome do Cliente, Nome do livro, Nome do Autor, Nome da Editora, CEP e UF do cliente).
+SELECT clientes.nome, livros.nome, autores.nome, editoras.editora, cep.cep_casa, cidade.nome_cidade, UF.UF, emprestimos.id_emprestimo
+FROM clientes, livros, autores, editoras, emprestimos, cep, cidade, uf
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND clientes.id_clientes = emprestimos.id_clientes
+AND clientes.id_cep = CEP.id_cep
+AND clientes.id_cidade = Cidade.id_cidade
+AND clientes.id_uf = UF.id_uf
+AND cidade.nome_cidade = "Campinas"
+
+
+9 - Emprestimos realizados para clientes que moram no UF "SP" (Nome do Cliente, Nome do livro, Nome do Autor, Nome da Editora, Cidade, CEP e do cliente).
+SELECT clientes.nome, livros.nome, autores.nome, editoras.editora, cep.cep_casa, cidade.nome_cidade, UF.UF, emprestimos.id_emprestimo
+FROM clientes, livros, autores, editoras, emprestimos, cep, cidade, uf
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND clientes.id_clientes = emprestimos.id_clientes
+AND clientes.id_cep = CEP.id_cep
+AND clientes.id_cidade = Cidade.id_cidade
+AND clientes.id_uf = UF.id_uf
+AND uf.uf = "SP"
+
+
+10 - Crie uma consulta sua.
+SELECT clientes.nome, livros.nome, autores.nome, generoslivro.genero_livro, publico.publico_do_livro, editoras.editora, cep.cep_casa, cidade.nome_cidade, UF.UF, emprestimos.id_emprestimo, emprestimos.data_empres, emprestimos.data_devol
+FROM clientes, livros, autores, editoras, emprestimos, cep, cidade, uf, generoslivro, publico
+WHERE emprestimos.id_livro = livros.id_livro
+AND livros.id_genero = generoslivro.id_genero
+AND livros.id_publico = publico.id_publico
+AND livros.id_autor = autores.id_autor
+AND livros.id_editora = editoras.id_editora
+AND clientes.id_clientes = emprestimos.id_clientes
+AND clientes.id_cep = CEP.id_cep
+AND clientes.id_cidade = Cidade.id_cidade
+AND clientes.id_uf = UF.id_uf
+AND uf.uf = "SP"
+AND cidade.nome_cidade = "Campinas"

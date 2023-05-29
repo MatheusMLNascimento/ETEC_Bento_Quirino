@@ -1,0 +1,7 @@
+package Exercises;
+public class exercise1 {
+    public static void main(String[] args){
+
+        System.out.println(Math.pow(3,3))
+    }
+}
