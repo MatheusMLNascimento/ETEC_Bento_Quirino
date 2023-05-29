@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Tabelas</title>
+
+    <!-- 02 Acrescente borda de 1px solida preta apenas para a tabela usando BORDER: -->
+    <!--    Modifique para que aparece no elemento TR e depois TD -->
+    <!--    alinhe o texto a esquerda com TEXT-ALIGN   -->
+    <!--    deixe as bordar com uma só linha com BORDER-COLLAPSE   -->
+    <style>
+        table, td, tr, th{
+            border: 1px solid red;
+            text-align: center;
+            border-collapse: collapse;
+            padding: 5px; 
+            width: 50% !important;margin: auto;
+        }
+        .centralizar{
+            text-align: center;
+        }
+
+     </style>
+
+</head>
+<body>
+    
+   <!-- 01 Criar a  estrutura da Tabela abaixo com TABLE TR/TH E TR/TD-->  
+   <table>
+
+    <thead>
+        <tr>
+            <th class="centralizar" colspan="6">Lista de Empresas</th>
+        </tr>
+
+        <tr>
+            <th><font size="4" face="times">Nome da Empresa</font></th>
+            <th><font size="4" face="times">Nome e Sobrenome Funcionario</font></th>
+            <th><font size="4" face="times">Cargo</font></th>
+            <th><font size="4" face="times">Salário</font></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Bonsai Japan</td>
+            <td>Rafael Silvano</td>
+            <td>Gerente Geral</td>
+            <td>R$ 7.200,00</td>
+        </tr>
+
+
+        <tr>
+            <td>EMTEC</td>
+            <td>Mario Gomes</td>
+            <td>Desenvolvedor Pleno</td>
+            <td>R$ 6.345,00</td>
+        </tr>
+
+        <tr>
+            <td>Armarinhos e Fernando</td>
+            <td>Fernando dos Santos</td>
+            <td>Dono</td>
+            <td>R$ 15.746,00</td>
+        </tr>
+
+        <tr>
+            <td>Microsoft</td>
+            <td>Bill Gates</td>
+            <td>CEO</td>
+            <td>R$ 500.000.000,00</td>
+        </tr>
+    </tbody>
+
+    </table>
+   <!-- 03 Acrescente uma linha superior com TR e TH chamada endereço com o atributo COLSPAN-->
+   <!-- 04 Adicionar THEAD e TBODY-->
+  
+
+</body>
+</html>
